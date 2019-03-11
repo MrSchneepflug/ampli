@@ -67,7 +67,7 @@ export default class ConvertStyles {
     const styleElementContent: string[] = await getElementContent(this.context, "style");
 
     return transformedResponses.concat(styleElementContent).join(" ");
-  };
+  }
 
   private getStylesheets = async (): Promise<Array<StylesheetResponseInterface | null>> => {
     const {document} = this.context;
@@ -84,7 +84,7 @@ export default class ConvertStyles {
     }
 
     return [];
-  };
+  }
 
   private async getSingleStylesheet(stylesheet: HTMLElement): Promise<StylesheetResponseInterface | null> {
     const href: string | null = stylesheet.getAttribute("href");
@@ -131,7 +131,7 @@ export default class ConvertStyles {
       /.*?(max|min)-width:\s?(\d*)(em|rem|%|px|ch|ex|vw|vh|vmin|vmax)\)?\;?/g,
       (match: string, minMax: string, size: string, unit: string) => {
         return `${minMax} ${size} ${unit}`;
-      }
+      },
     ).split(" ");
 
     let sizeInPx: number = parseInt(ruleSettings[1], 10);

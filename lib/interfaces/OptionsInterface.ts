@@ -14,7 +14,7 @@ export default interface OptionsInterface {
   baseUrl?: string;
   hooks?: {
     styles?: {
-      parseRule?: (rule: any) => any
-    }
+      parseRule?: (rule: any) => any,
+    },
   };
 }
