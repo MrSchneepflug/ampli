@@ -1,7 +1,4 @@
-import * as fs from "fs";
-import * as path from "path";
 import ContextInterface from "../interfaces/ContextInterface";
-import OptionsInterface from "../interfaces/OptionsInterface";
 import { createElement } from "../utils/";
 
 export default async (

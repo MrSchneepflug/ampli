@@ -1,6 +1,6 @@
-import * as isAbsoluteUrl from "is-absolute-url";
-import * as requestImageSize from "request-image-size";
-import * as url from "url";
+import isAbsoluteUrl from "is-absolute-url";
+import requestImageSize from "request-image-size";
+import url from "url";
 
 import ImageDimentionsInterface from "../interfaces/ImageDimentionsInterface";
 import OptionsInterface from "../interfaces/OptionsInterface";

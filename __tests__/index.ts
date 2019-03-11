@@ -1,7 +1,6 @@
-import * as fs from "fs";
-import * as Log from "log";
-import * as path from "path";
-import Ampli, { ContextInterface } from "../";
+import fs from "fs";
+import path from "path";
+import Ampli from "../";
 
 const inputArguments: string[] = process.argv.slice(2);
 
@@ -12,7 +11,6 @@ if (!inputArguments[0]) {
 const file: string = inputArguments[0];
 const filePath: string = path.resolve(__dirname, "../../__tests__/data/", file);
 const outputPath: string = path.resolve(__dirname, `amp-${file}`);
-const log = new Log("info");
 
 fs.readFile(filePath, async (err, content: Buffer): Promise<string> => {
   if (err) {
@@ -27,7 +25,6 @@ fs.readFile(filePath, async (err, content: Buffer): Promise<string> => {
   const amp: string = await ampli.transform(html, "https://drublic.de/");
 
   fs.writeFileSync(outputPath, amp);
-  log.info(`Generated File: ${outputPath}`);
 
   return amp;
 });

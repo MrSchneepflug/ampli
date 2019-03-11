@@ -1,5 +1,5 @@
-import * as isAbsoluteUrl from "is-absolute-url";
-import * as request from "request-promise-native";
+import isAbsoluteUrl from "is-absolute-url";
+import request from "request-promise-native";
 
 import Logger from "../Logger";
 

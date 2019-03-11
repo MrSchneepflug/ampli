@@ -1,8 +1,8 @@
-import * as CleanCSS from "clean-css";
-import * as Css from "css";
-import * as path from "path";
-import StaticStyles, { Output as StaticStylesOutput } from "static-styles";
-import * as url from "url";
+import CleanCSS from "clean-css";
+import Css from "css";
+import path from "path";
+import StaticStyles, {Output as StaticStylesOutput} from "static-styles";
+import url from "url";
 
 import ContextInterface from "../interfaces/ContextInterface";
 import OptionsInterface from "../interfaces/OptionsInterface";
@@ -67,16 +67,14 @@ export default class ConvertStyles {
     const styleElementContent: string[] = await getElementContent(this.context, "style");
 
     return transformedResponses.concat(styleElementContent).join(" ");
-  }
+  };
 
-  private getStylesheets = async (): Promise<
-    Array<StylesheetResponseInterface | null>
-  > => {
-    const { document } = this.context;
+  private getStylesheets = async (): Promise<Array<StylesheetResponseInterface | null>> => {
+    const {document} = this.context;
     const stylesheetElements: NodeListOf<HTMLElement> =
       document.querySelectorAll('link[rel="stylesheet"]');
     const stylesheets: HTMLElement[] = Array.from(stylesheetElements);
-    const promises: Array< Promise<StylesheetResponseInterface | null> > =
+    const promises: Array<Promise<StylesheetResponseInterface | null>> =
       stylesheets.map(this.getSingleStylesheet);
 
     try {
@@ -86,11 +84,9 @@ export default class ConvertStyles {
     }
 
     return [];
-  }
+  };
 
-  private async getSingleStylesheet(stylesheet: HTMLElement): Promise<
-    StylesheetResponseInterface | null
-  > {
+  private async getSingleStylesheet(stylesheet: HTMLElement): Promise<StylesheetResponseInterface | null> {
     const href: string | null = stylesheet.getAttribute("href");
 
     if (!href) {

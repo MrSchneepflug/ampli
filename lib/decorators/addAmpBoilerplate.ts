@@ -1,5 +1,5 @@
-import * as fs from "fs";
-import * as path from "path";
+import fs from "fs";
+import path from "path";
 import ContextInterface from "../interfaces/ContextInterface";
 import OptionsInterface from "../interfaces/OptionsInterface";
 
